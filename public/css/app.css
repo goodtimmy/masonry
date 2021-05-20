@@ -122,11 +122,14 @@ background-color: white;
 }
 
 .button-round {
+    width: 250px;
     display: inline;
+    margin-bottom: 20px;
     padding: 10px;
     color: white;
     border-radius: 25px;
     background-color: #585858;
+    font-weight: bolder;
 
 }
 .button-active
@@ -134,5 +137,37 @@ background-color: white;
     background-color: #585858;
 }
 
+.header-text
+{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/*.upload-image*/
+/*{*/
+    /**/
+/*}*/
 
+.standart-label
+{
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0;
 
+}
+.standart-input
+{
+    display: inline;
+
+    width: 380px;
+    height: 50px;
+    text-align: center;
+
+    margin-top: 2%;
+    padding: 15px;
+
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+}
