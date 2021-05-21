@@ -24,7 +24,7 @@ nav {
     float: left;
     padding-top: 3px;
     text-transform: uppercase;
-    color: +-3;
+    color: + -3;
 }
 
 ul li {
@@ -104,9 +104,9 @@ ul li:hover {
     border-radius: 5px;
 }
 
-.button-favorites {-
+.button-favorites {
 
-background-color: white;
+    background-color: white;
     color: black;
     border: 1px solid #E7E9EB;
 }
@@ -122,7 +122,7 @@ background-color: white;
 }
 
 .button-round {
-    width: 250px;
+    width: 380px;
     display: inline;
     margin-bottom: 20px;
     padding: 10px;
@@ -132,32 +132,44 @@ background-color: white;
     font-weight: bolder;
 
 }
-.button-active
-{
-    background-color: #585858;
+
+.button-select {
+    width: 190px;
+    display: inline;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bolder;
+    border: 1px solid #E7E9EB;
+    background-color: #E7E9EB;
+    color: black;
+
 }
 
-.header-text
-{
+.button-select-active {
+    background-color: white;
+    color: black;
+}
+
+.header-text {
     margin-top: 20px;
     margin-bottom: 50px;
     text-transform: uppercase;
     font-weight: bold;
 }
+
 /*.upload-image*/
 /*{*/
-    /**/
+/**/
 /*}*/
 
-.standart-label
-{
+.standart-label {
     text-transform: uppercase;
     display: block;
     margin-bottom: 0;
 
 }
-.standart-input
-{
+
+.standart-input {
     display: inline;
 
     width: 380px;
@@ -189,4 +201,18 @@ body .modal-dialog {
     max-width: 100%;
     width: auto !important;
     display: inline-block;
+}
+
+.anchor {
+    display: block;
+    height: 40px;
+    /*margin-top: -92px;*/
+}
+.isadmin-checkbox {
+    height: 32px;
+    display: none;
+}
+#confirm_password {
+    display: none;
+
 }

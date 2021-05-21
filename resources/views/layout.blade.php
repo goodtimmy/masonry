@@ -35,6 +35,10 @@
         <nav>
             <ul>
                 @if (Auth::check())
+                    <li class="button button-favorites"> moderation</li>
+                @endif
+
+                @if (Auth::check())
                     <li class="button button-favorites"><i class="fas fa-heart"></i> favorites</li>
                 @endif
 

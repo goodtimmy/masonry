@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Images;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -16,10 +16,13 @@ class HomeController extends Controller
     public function index()
     {
 
-        // $images = Images::all()->take(10);
-        $images = Images::paginate(20);
+        $array =  DB::table('images')
+            ->leftJoin('users', 'images.id_user', '=', 'users.id')
+            ->select('images.*', 'users.email')
+            ->where('images.verified', '=' , '1')
+            ->get();
 
-        return view('main', ['images' => $images]);
+        return view('main', ['images' =>  $array]);
     }
 
     public function getList()

@@ -41,7 +41,7 @@
                     @csrf
 
                     <div class="form-group">
-                        <label class="standart-label" for="">upload image</label>
+                        <label class="standart-label" for="image">upload image</label>
                         <input class="form-control input-lg standart-input" type="file" name="image" id=""
                                placeholder="choose a file"/>
                     </div>

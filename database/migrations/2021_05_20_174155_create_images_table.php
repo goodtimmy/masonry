@@ -20,7 +20,7 @@ class CreateImagesTable extends Migration
             $table->string('stored_name');
             $table->string('title')->nullable();
             $table->text('description')->nullable();
-            $table->boolean('veryfied')->nullable();
+            $table->boolean('verified')->nullable();
             $table->timestamps();
         });
     }

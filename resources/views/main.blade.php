@@ -9,13 +9,18 @@
             @foreach ($images as $image)
 
                 <div class="box">
-                    <img src="images/{{ $image['stored_name'] }}"
-                         @click="showImageInModal('{{ $image['stored_name'] }}')">
-                    <h2>{{ $image['title'] }}</h2>
+                    <img src="images/{{ $image->stored_name }}"
+                         @click="showImageInModal('{{ $image->stored_name }}')">
+                    <h2>{{ $image->title }}</h2>
+
+                    @if($image->email )
+                    <span>Author: {{ $image->email }}</span>
+                    @endif
+
                     <p>
-                        {{ $image['description'] }}
+                        {{ $image->description }}
                     </p>
-                    <i class="fas fa-heart"></i> {{ $image['favorites'] }}
+                    {{--<i class="fas fa-heart"></i> {{ $image->favorites }}--}}
                 </div>
 
             @endforeach

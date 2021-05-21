@@ -32,12 +32,15 @@ class ImageUploadController extends Controller
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
 
+        Auth::id() == true ? $verified = 1 : $verified = 0;
+
         $image = new Images();
         $image->id_user = Auth::id();
         $image->real_name = $request->image->getClientOriginalName();
         $image->stored_name = $imageName;
         $image->title = $request->title;
         $image->description = $request->description;
+        $image->verified = $verified;
         $image->save();
 
         return back()
