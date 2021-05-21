@@ -4,6 +4,7 @@
 
     <title>Regex</title>
 
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
     <!-- Fonts -->
@@ -17,7 +18,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- vue -->
-    <script src="{{ URL::asset('assets/js/vue.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 
 </head>
 <body>
@@ -55,5 +58,45 @@
     </div>
     @yield('content')
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('#formSubmit').click(function(e){
+
+            $.ajax({
+                url: "{{ url('/main') }}",
+                method: 'post',
+                data: {
+                    name: $('#name').val(),
+                    auther_name: $('#auther_name').val(),
+                    description: $('#description').val(),
+                },
+                success: function(result){
+                    if(result.errors)
+                    {
+                        $('.alert-danger').html('');
+
+                        $.each(result.errors, function(key, value){
+                            $('.alert-danger').show();
+                            $('.alert-danger').append('<li>'+value+'</li>');
+                        });
+                    }
+                    else
+                    {
+                        $('.alert-danger').hide();
+                        $('#exampleModal').modal('hide');
+                    }
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
+
+
+
+
+
+

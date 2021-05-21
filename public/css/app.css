@@ -171,3 +171,22 @@ background-color: white;
     font-family: 'Abel', sans-serif;
     color: #5E6472;
 }
+
+.modal {
+    z-index: -1;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-open .modal {
+    z-index: 1050;
+}
+
+
+body .modal-dialog {
+    margin: auto;
+    max-width: 100%;
+    width: auto !important;
+    display: inline-block;
+}
